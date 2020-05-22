@@ -6,8 +6,9 @@ import pprint
 headers = {}
 instance = ""
 
-def login(args):
+api_version = "v47.0"
 
+def login(args):
 
     url =  "https://" + args.login_url.replace("https://", "")
     print("Login to salesforce: " + url)
@@ -21,9 +22,6 @@ def login(args):
     }
 
     r = requests.post(url + "/services/oauth2/token", data=params)
-
-    pprint.pprint(params)
-    pprint.pprint(r.json())
 
     access_token = r.json().get("access_token")
     instance_url = r.json().get("instance_url")
@@ -41,3 +39,18 @@ def login(args):
     instance = instance_url
 
     return instance_url
+
+def getFields(object):
+
+    url = instance +  "/services/data/"+ api_version + "/sobjects/" + object + "/describe"
+
+    print("Get fields for: " + object)
+
+    r = requests.get(url, headers=headers)
+
+    fields = []
+
+    for field in r.json().get('fields'):
+        fields.append(field.get('name'))
+
+    return fields
