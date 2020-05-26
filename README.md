@@ -1,7 +1,7 @@
 ## Salesforce Data Loader batch backup (windows only)
 
 This simple script configures and executes export data from Salesforce for backup purposes.
-It is calling data loader from termianl - Windows only
+It is calling data loader from terminal - Windows only
 
 ## Usage
 
@@ -18,7 +18,7 @@ positional arguments:
   client_secret    Salesforce application client_secret used to login
   username         User name for login
   password         User password for login
-  path             Path to Data Loader
+  path             Absolute path to Data Loader *.uber.jar file
   object           Salesforce object to backup
 
 optional arguments:
