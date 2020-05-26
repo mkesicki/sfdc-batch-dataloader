@@ -1,7 +1,7 @@
 ## Salesforce Data Loader batch backup (windows only)
 
-This simple script configures and executes export data for backup purposes from Salesforce.
-It is using possibilty to call data loader in terminal but works only in windows
+This simple script configures and executes export data from Salesforce for backup purposes.
+It is calling data loader from termianl - Windows only
 
 ## Usage
 
